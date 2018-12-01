@@ -21,20 +21,20 @@ class ShowPost extends Component {
 			return <div>Loading...</div>
 		}
 		return(
-				<div>
+				<div className="post_show">
 					<Link to="/">Back To Posts</Link>
 					<button
 						className="btn btn-danger pull-xs-right"
 						onClick={this.onDeleteHandle.bind(this)}
 					>
 					Delete Post</button>
-					<h4>{post.title}</h4>
-					<h5>Categories: {post.categories}</h5>
-					<h6>{post.content}</h6>
+					<span>{post.title}</span>
+					<span>Categories: {post.categories}</span>
+					<span>{post.content}</span>
 				</div>
 			);
 	}
-} 
+}
 //ownProps is same as this.props
 function mapStateToProps({posts},ownProps) {
 	return { post: posts[ownProps.match.params.id]};

@@ -12,7 +12,7 @@ class PostsNew extends Component {
 		return(
 				<div className={className}>
 					<label>{field.label}</label>
-					<input 
+					<input
 						className="form-control"
 						type="text"
 						{...field.input}
@@ -31,7 +31,7 @@ class PostsNew extends Component {
 	render() {
 		const { handleSubmit } =this.props;
 		return(
-				<form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+				<form className="form-new" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
 					<Field
 						label="Title"
 						name="title"
@@ -65,7 +65,7 @@ function validate(values) {
 	if(!values.content) {
 		errors.content = "Enter the Content";
 	}
-	//if errors object have no values then form is ready to sunmit 
+	//if errors object have no values then form is ready to sunmit
 	//if errors object have a properties then form is valid.
 	return errors;
 }
